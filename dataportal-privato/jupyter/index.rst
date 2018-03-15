@@ -6,7 +6,7 @@ Jupyter Notebook: strumento per data science
 Introduzione
 ============
 
-`Jupyter Notebook <http://jupyter.org/>`_ è un'applicazione Web open-source che permette di creare e condividere documenti testuali interattivi, contenenti oggetti quali equazioni, grafici e codice sorgente eseguibile.
+`Jupyter Notebook <http://jupyter.org/>`_ è un'applicazione Web open source che permette di creare e condividere documenti testuali interattivi, contenenti oggetti quali equazioni, grafici e codice sorgente eseguibile.
 Jupyter è diventato uno standard de-facto per data scientist perché offre la possibilità di realizzare, documentare e condividere analisi di dati all'interno di un framework che supporta [1]_:
 
 * operazioni di *data cleaning & trasformation*, simulazioni numeriche, modellazione statistica, machine learning e altro;
@@ -15,15 +15,15 @@ Jupyter è diventato uno standard de-facto per data scientist perché offre la p
 A fronte di queste caratteristiche, Jupyter è stato scelto per essere uno degli strumenti messi a disposizione degli utenti del DAF.
 L'obiettivo è quello di favorire l'analisi dei dati presenti nel DAF stesso e la pubblicazione su Web dei relativi risultati.
 
-Questo breve *how-to* è pensato per fornire le informazioni basilari per configurare un notebook Jupyter utile per effettuare analisi sui dataset contenuti nel DAF utilizzando la capacità di calcolo di un cluster Spark.
+Questa breve guida è pensata per fornire le informazioni basilari per configurare un notebook Jupyter utile per effettuare analisi sui dataset contenuti nel DAF utilizzando la capacità di calcolo di un cluster Spark.
 Pertanto, qualora si intenda eseguire analisi gestibili su un singolo laptop, si consiglia di scaricare i dataset sulla propria macchina e realizzare le analisi localmente.
-In tal caso si consideri che le analisi locali possono essere realizzate, oltre che con framework convenzionali quali R e Python (panda + scikit), anche con un'`istallazione locale di Jupyter Notebook <http://jupyter.org/install.html>`_.
+In tal caso si consideri che le analisi locali possono essere realizzate, oltre che con framework convenzionali quali R e Python (`pandas <https://pandas.pydata.org/>`_ + `scikit-learn <http://scikit-learn.org/stable/>`_), anche con un'`installazione locale di Jupyter Notebook <http://jupyter.org/install.html>`_.
 
 =========================================
 Creazione e configurazione di un notebook
 =========================================
 Per accedere alla console Jupyter del DAF collegarsi `a questo indirizzo <https://datascience.daf.teamdigitale.it/>`_.
-Una volta effettuato il login con le credenziali fornite per il dataportal, si avrà accesso alla propria home nella quale è riportato l'elenco dei notebook associati all'utenza (al primo accesso l'elenco sarà vuoto).
+Una volta effettuato il login con le credenziali fornite per il Dataportal, si avrà accesso alla propria home nella quale è riportato l'elenco dei notebook associati all'utenza (al primo accesso l'elenco sarà vuoto).
 
 Per iniziare una nuova analisi è necessario creare un nuovo notebook scegliendo l'ambiente di sviluppo (*kernel*).
 A tal fine cliccare sul pulsante 'new' in alto a destra e selezionare una delle seguenti voci dal menù a tendina:
@@ -83,7 +83,7 @@ Caricare un dataset
 ===================
 
 Una volta attivata con successo una sessione Spark, l'ambiente è pronto per iniziare l'attività di analisi.
-La prima cosa da fare è selezionare il dataset da analizzare in :dataportal-private:`/`.
+La prima cosa da fare è selezionare il dataset da analizzare nel `Dataportal <https://dataportal-private.daf.teamdigitale.it>`_.
 
 Nella barra di ricerca in alto al centro è possibile inserire del testo per fare ricerca dei dataset indicizzati.
 
@@ -99,7 +99,7 @@ Premendo l'icona a destra di ogni risultato si accede alla scheda informativa de
 
 Per creare uno Spark DataFrame con il dataset che si vuole analizzare, procedendo come segue:
 
-* Identificare il dataset su :dataportal:`/` e tenere traccia del path e del formato indicati nella scheda informativa (vedi sopra). Nel caso in esempio, si è scelto il dataset 'abitazioni_d_ritirate_d_e_d_ultimate_d_per_d_numero_d_stanze_d_anno_d_2013_d_4e3f6d25_63'.
+* Identificare il dataset nel `Dataportal <https://dataportal-private.daf.teamdigitale.it>`_ e tenere traccia del path e del formato indicati nella scheda informativa (vedi sopra). Nel caso in esempio, si è scelto il dataset 'abitazioni_d_ritirate_d_e_d_ultimate_d_per_d_numero_d_stanze_d_anno_d_2013_d_4e3f6d25_63'.
 * Eseguire nel notebook il seguente comando, che chiede a Spark di creare un nuovo DataFrame contenente il dataset specificato:
 
 .. code-block:: scala
