@@ -1,5 +1,6 @@
 _build/
 docs-italia-theme/
+*.swp
 
 .DS_Store
 .ropeproject/

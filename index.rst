@@ -18,3 +18,4 @@ Questo manuale per l'utente illustra le principali operazioni che è possibile s
    Data & Analytics Framework <daf/index> 
    Dataportal: area pubblica <dataportal-pubblico/index>
    Dataportal: area privata <dataportal-privato/index>
+   Strumenti per data science <datascience/index>
