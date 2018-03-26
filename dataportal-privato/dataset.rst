@@ -2,25 +2,25 @@
 Gestione dei dataset 
 **********************************
 
-La metadatazione e il caricamento di un dataset sul DAF sono operazioni concesse solamente a specifiche utenze dell'organizzazione che assumono il ruolo di *Editor*. Tali operazioni possono essere eseguite sfruttando le funzionalità presenti nel menu *Toolkit > Dataset > Crea scheda e carica*.
+La metadatazione e il caricamento di un dataset sul DAF sono operazioni concesse solamente a specifiche utenze dell'organizzazione che assumono il ruolo di *Editor*. Tali operazioni possono essere eseguite sfruttando le funzionalità presenti nel menu *Toolkit > Crea > Nuovo dataset*.
 
-La ricerca e l'accesso ai dataset sono funzionalità accessibili a tutti gli utenti, i dataset rilasciati in formato open data sono direttamente ricercabili dall'`interfaccia pubblica del portale <https://dataportal.daf.teamdigitale.it/>`_, i dataset caricati e appartenenti alla propria organizzazione sono accedibili tramite l'`interfaccia privata del portale <https://dataportal-private.daf.teamdigitale.it>`_ secondo i permesssi selezionati.
+La ricerca e l'accesso ai dataset sono funzionalità accessibili a tutti gli utenti, i dataset rilasciati in formato open data sono direttamente ricercabili dall'`interfaccia pubblica del portale <https://dataportal.daf.teamdigitale.it/>`_, i dataset caricati e appartenenti alla propria organizzazione sono accedibili tramite l'`interfaccia privata del portale <https://dataportal-private.daf.teamdigitale.it>`_ secondo i permessi selezionati.
 
 
 ============================
 Elenco e ricerca dei dataset
 ============================
 
-La funzionalità di elenco e ricerca è attivabile dalla voce di menu *Dataset* o attraverso il filtro di ricerca presente in alto. In questo secondo caso i dataset mostrati sono quelli rispondenti alla ricerca effettuata. In entrambi i casi, sono mostrati solo i dataset sui quali l’utente ha diritti di accesso. L’elenco può essere ordinato o filtrato; è inizialmente composto dai primi 10 dataset, continuando a scorrere la lista vengono man mano caricati i successivi.
+La funzionalità di elenco e ricerca è attivabile dalla voce di menu *Dataset* o attraverso il filtro di ricerca presente in alto a destra. In questo secondo caso i dataset mostrati sono quelli rispondenti alla ricerca effettuata. In entrambi i casi, sono mostrati solo i dataset sui quali l’utente ha diritti di accesso. L'elenco può essere ordinato o filtrato; è inizialmente composto dai primi 10 dataset, continuando a scorrere la lista vengono man mano caricati i successivi.
 
 Cliccando su un dataset viene mostrata una pagina contenente:
 
 * informazioni di dettaglio relative al dataset
-* la possibilità di eseguire il download del dataset
-* un’anteprima del contenuto del dataset
-* l’API endpoint per effettuare chiamate REST API
+* la possibilità di eseguire il download del dataset (limitato a 1000 record)
+* un'anteprima del contenuto del dataset (in formato json)
+* l'API endpoint per effettuare `chiamate REST API <api.html>`_
 * informazioni di accesso agli strumenti di analisi: Superset e Jupyter
-* eventuali slice realizzare con il dataset
+* eventuali slice realizzate con il dataset
 
 
 =================================
@@ -35,7 +35,7 @@ Nel caso di un flusso batch, inoltre, i file dovranno essere caricati su un cana
 
 Creazione e metadatazione del dataset 
 =====================================
-Per iniziare la procedura di caricamento di un nuovo dataset è necessario cliccare nel menu *Toolkit > Dataset > Crea scheda e carica*.
+Per iniziare la procedura di caricamento di un nuovo dataset è necessario cliccare nel menu *Toolkit > Crea > Nuovo dataset*.
 
 Il cruscotto di registrazione si compone di 3 passi.
 
@@ -48,18 +48,18 @@ In entrambi i casi, il processo di metadatazione è supportato da una procedura 
 
 E' necessario che il file campione rispetti alcune regole:
 
-* Il numero di record deve esser limitato (max 50 righe)
+* Il numero di record deve esser limitato (circa 50 righe)
 * I nomi dei campi non devono avere spazi al loro interno
 * I nomi dei campi devono essere tutti diversi
-* I nomi dei campi non devono contenere i caratteri ‘@’ e ‘-’
-* Dimensione del file sample massima:
-* Devono rappresentare il file nella sua interezza, questo vuol dire che l’utente che carica il file si deve preoccupare di inserire nelle righe del sample, records coerenti con il tipo di dato che ci si aspetta sulla tabella finale.
-* I file con separatore devono contenere l’header sia nel sample che in tutti i file che vengono caricati successivamente
+* I nomi dei campi non devono contenere caratteri speciali (e.g. '@', '-', '(', ')' )
+* Dimensione del file sample massima: 1 MB
+* Deve essere rappresentativo del dataset al fine di migliorare il risultato del processo di inferenza: per quanto possibile deve contenere record coerenti con il tipo di dato che ci si aspetta sulla tabella finale
+* I file CSV devono contenere l'header sia nel sample che in tutti i file che vengono caricati successivamente
 * Encoding UTF-8
 
 Dopo aver caricato il file verrà visualizzata una schermata con l'elenco dei campi inferiti e per ognuno un campione dei valori contenuti.
 
-Inizialmente è necessario indicare se il dataset è privato; in caso contrario, il dataset sarà automaticamente aggiunto tra quelli fruibili liberamente al di fuori dell'organizzazione e come open data. 
+Inizialmente è necessario indicare se il dataset è privato; in caso contrario, il dataset sarà automaticamente aggiunto tra quelli fruibili liberamente al di fuori dell'organizzazione e come open data (disponibile a breve). 
 
 Successivamente, per ogni campo del dataset è possibile indicare:
 
