@@ -36,6 +36,7 @@ Le pubbliche amministrazioni registrate potranno inoltre usufruire di strumenti 
    Gestione dei dataset <dataset>
    Dashboard e storie <dashboard>
    Gestione degli utenti <organization>
+   Modalità di impiego dell'API REST <api>
 
 .. [1] Elenco non esaustivo e in evoluzione.
 .. [2] Al momento questa funzionalità è offerta solo alle Pubbliche Amministrazioni
